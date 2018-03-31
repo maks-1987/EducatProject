@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="183.0" y="79.0">com.company.services.ContactService</node>
+    <node x="78.16666666666669" y="293.0">com.company.view.impl.CmdLineServiceImpl</node>
+    <node x="0.0" y="92.0">com.company.view.CmdLineService</node>
+    <node x="134.66666666666669" y="560.0">com.company.Program</node>
+    <node x="393.3333333333333" y="345.5">com.company.services.impl.ContactServiceImpl</node>
+    <node x="452.99999999999994" y="0.0">com.company.model.Contact</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.services.impl.ContactServiceImpl" target="com.company.services.ContactService">
+      <point x="-93.75" y="-56.0" />
+      <point x="424.5833333333333" y="268.0" />
+      <point x="391.3333333333333" y="268.0" />
+      <point x="83.33333333333331" y="42.5" />
+    </edge>
+    <edge source="com.company.view.impl.CmdLineServiceImpl" target="com.company.view.CmdLineService">
+      <point x="-97.66666666666669" y="-108.5" />
+      <point x="127.0" y="268.0" />
+      <point x="122.25" y="268.0" />
+      <point x="40.75" y="29.5" />
+    </edge>
+    <edge source="com.company.Program" target="com.company.view.impl.CmdLineServiceImpl">
+      <point x="0.0" y="-29.5" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="com.company.view.impl.CmdLineServiceImpl" target="com.company.services.ContactService">
+      <point x="97.66666666666669" y="-108.5" />
+      <point x="322.33333333333337" y="268.0" />
+      <point x="308.0" y="268.0" />
+      <point x="0.0" y="42.5" />
+    </edge>
+    <edge source="com.company.services.impl.ContactServiceImpl" target="com.company.model.Contact">
+      <point x="93.75" y="-56.0" />
+      <point x="612.0833333333333" y="268.0" />
+      <point x="616.3333333333333" y="268.0" />
+      <point x="65.33333333333326" y="121.5" />
+    </edge>
+    <edge source="com.company.Program" target="com.company.services.impl.ContactServiceImpl">
+      <point x="60.0" y="-29.5" />
+      <point x="284.6666666666667" y="535.0" />
+      <point x="518.3333333333333" y="535.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="com.company.Program" target="com.company.view.CmdLineService">
+      <point x="-60.0" y="-29.5" />
+      <point x="164.66666666666669" y="535.0" />
+      <point x="40.75" y="535.0" />
+      <point x="-40.75" y="29.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="324.5" y="309.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
