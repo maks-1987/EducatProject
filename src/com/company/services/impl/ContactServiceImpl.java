@@ -10,8 +10,8 @@ public class ContactServiceImpl implements ContactService {
     private List<Contact> contactList = new ArrayList<>();
 
     @Override
-    public void createContact(String name, int age) {
-        this.contactList.add(new Contact(name, age));
+    public void createContact(String name, int age, String phoneNumber) {
+        this.contactList.add(new Contact(name, age, phoneNumber));
 
         for (Contact contact : this.contactList) {
             System.out.println(contact);

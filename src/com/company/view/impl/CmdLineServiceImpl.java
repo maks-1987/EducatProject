@@ -52,7 +52,9 @@ public class CmdLineServiceImpl implements CmdLineService {
         String name = br.readLine();
         System.out.println("Enter age");
         int age = Integer.parseInt(br.readLine());
-        this.contactService.createContact(name, age);
+        System.out.println("Enter phoneNumber");
+        String phoneNumber = br.readLine();
+        this.contactService.createContact(name, age, phoneNumber);
     }
 
     private void deleteContact() {
