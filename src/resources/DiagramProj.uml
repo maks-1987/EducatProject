@@ -5,7 +5,7 @@
   <nodes>
     <node x="338.0" y="0.0">com.company.services.ContactService</node>
     <node x="0.0" y="109.0">com.company.view.impl.CmdLineServiceImpl</node>
-    <node x="241.0" y="371.0">com.company.Program</node>
+    <node x="320.0" y="371.0">com.company.Program</node>
     <node x="65.0" y="0.0">com.company.view.CmdLineService</node>
     <node x="338.0" y="135.0">com.company.services.impl.ContactServiceImpl</node>
     <node x="0.0" y="371.0">com.company.model.Contact</node>
@@ -21,9 +21,9 @@
       <point x="0.0" y="29.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="294.0" y="307.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="294.0" y="367.0" />
   <SelectedNodes>
-    <node>com.company.services.impl.ContactServiceImpl</node>
+    <node>com.company.Program</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
