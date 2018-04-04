@@ -6,5 +6,4 @@ public interface CmdLineService {
 
     void runMenu() throws IOException;
 
-
 }

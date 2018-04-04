@@ -14,8 +14,14 @@ public class CmdLineServiceImpl implements CmdLineService {
 
     public CmdLineServiceImpl(ContactService contactService) {
         this.contactService = contactService;
-
     }
+    private static void showMenu() {
+        System.out.println("1. Create Contact");
+        System.out.println("2. Delete Contact");
+        System.out.println("3. Show Contact");
+        System.out.println("0. Exit");
+    }
+
     @Override
     public void runMenu() throws IOException {
         boolean isRunning = true;
@@ -31,6 +37,10 @@ public class CmdLineServiceImpl implements CmdLineService {
                     deleteContact();
                     break;
                 }
+                case "3": {
+                    showContact();
+                    break;
+                }
                 case "0": {
                     isRunning = false;
                     break;
@@ -41,10 +51,8 @@ public class CmdLineServiceImpl implements CmdLineService {
         }
     }
 
-    private static void showMenu() {
-        System.out.println("1. Create Contact");
-        System.out.println("2. Delete Contact");
-        System.out.println("0. Exit");
+    private void showContact() {
+        this.contactService.showContact();
     }
 
     private void createContact() throws IOException {
@@ -57,8 +65,8 @@ public class CmdLineServiceImpl implements CmdLineService {
         this.contactService.createContact(name, age, phoneNumber);
     }
 
-    private void deleteContact() {
-        System.out.println("Delete Contact");
+    private void deleteContact() throws IOException {
+        this.contactService.deleteContact();
     }
 
 }
