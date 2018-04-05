@@ -11,6 +11,7 @@ import java.util.List;
 
 public class ContactServiceImpl implements ContactService {
     private List<Contact> contactList = new ArrayList<>();
+    private String name;
 
     @Override
     public void createContact(String name, int age, String phoneNumber) {
@@ -19,14 +20,22 @@ public class ContactServiceImpl implements ContactService {
         for (Contact contact : this.contactList) {
             System.out.println(contact);
         }
-
     }
+    /*@Override
+    public void deleteContact(List<Contact> contactList, String name) {
+        Iterator<Contact> iterator = contactList.iterator();
+        while(iterator.hasNext()) {
+            if (iterator.next().getName() == name) {
+                iterator.remove();
+                return;
+            }
+        }
+    }*/
     @Override
     public void deleteContact() throws IOException, IndexOutOfBoundsException {
-        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(" Deleting a contact by index (0 - ...) N_ ");
         int index = Integer.parseInt(br.readLine());
-        // проверка на выход за пределы массива, если нет - вывод успешности выполнения
         try {
             if (index >= 0) {
                 contactList.remove(index);
