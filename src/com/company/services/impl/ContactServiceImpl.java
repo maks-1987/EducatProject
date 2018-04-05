@@ -11,7 +11,6 @@ import java.util.List;
 
 public class ContactServiceImpl implements ContactService {
     private List<Contact> contactList = new ArrayList<>();
-    private String name;
 
     @Override
     public void createContact(String name, int age, String phoneNumber) {
@@ -35,6 +34,15 @@ public class ContactServiceImpl implements ContactService {
     public void deleteContact() throws IOException, IndexOutOfBoundsException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(" Deleting a contact by index (0 - ...) N_ ");
+        /*String name = br.readLine();
+        int age = Integer.parseInt(br.readLine());
+        String phoneNumber = br.readLine();
+        Contact contact = new Contact(name, age, phoneNumber);
+        if (contact.equals(Contact))
+            contactList.remove(contact);
+        else
+            System.out.println("NOT");
+        */
         int index = Integer.parseInt(br.readLine());
         try {
             if (index >= 0) {
