@@ -3,51 +3,21 @@ package com.company.services.impl;
 import com.company.model.Contact;
 import com.company.services.ContactService;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ContactServiceImpl implements ContactService {
-    private List<Contact> contactList = new ArrayList<>();
+    private Map<String, Contact> contactList = new HashMap<>();
 
     @Override
     public void createContact(String name, int age, String phoneNumber) {
-        this.contactList.add(new Contact(name, age, phoneNumber));
-
-        for (Contact contact : this.contactList) {
-            System.out.println(contact);
-        }
+        this.contactList.put(name, new Contact(name, age, phoneNumber));
     }
+
     @Override
-    public void deleteContact() throws IOException {
-        Iterator<Contact> iterator = contactList.iterator();
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter a name to delete...");
-        String name = br.readLine();
-        while(iterator.hasNext()) {
-            if (iterator.next().getName().contains(name)) {
-                iterator.remove();
-                System.out.println("  Contact deleted");
-            }/*else{
-                System.out.println("Retry...");
-            }*/
-            }
-        }
-    /*@Override
-    public void deleteContact() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter a name to delete...");
-        String name = br.readLine();
-        Iterator iterator =
-        if (name.contains(name)) {
-            contactList.remove(this.contactList);
-        } else {
-            System.out.println("NOT");
-        }
-    }*/
+    public void deleteContact(String name) {
+        this.contactList.remove(name);
+    }
     /*@Override
         public void deleteContact() throws IOException, IndexOutOfBoundsException {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -62,31 +32,29 @@ public class ContactServiceImpl implements ContactService {
                 } // если ввести число > чем индексов массива выведем это:
             } catch (IndexOutOfBoundsException e) {
                 System.out.println(" Incorrect index. Repeat! Delete Contact");
-            }
-        }*/
-    //String name = br.readLine();
-        /*int age = Integer.parseInt(br.readLine());
-        String phoneNumber = br.readLine();
-        Contact contact = new Contact(name, age, phoneNumber);
-        if (contact.equals(Contact))
-            contactList.remove(contact);
-        else
-            System.out.println("NOT");
-        */
-        /*Iterator<Contact> iterator = contactList.iterator();
-        iterator.next().getName(br.readLine());*/
-    //contactList.remove(this.contactList);
-    //contactList.remove(Contact);
+            }  }*/
     @Override
     public void showContact() {
-        if (contactList.isEmpty()) { // проверка, пустой ли список
+        for (Contact contact : this.contactList.values()) {
+            System.out.println(contact);
+        }
+        /*if (contactList.isEmpty()) { // проверка, пустой ли список
             System.out.println(" ContactList is Empty! ");
         } else { // если не пустой, выводим контакты построчно
             for (int i = 0; i < contactList.size(); i++) {
                 int j = contactList.size() - i - 1; // (arr.length - 1 - 0 = 0, потом 1,2...)
                 System.out.println(contactList.get(j));
             }
-        }
+        }*/
     }
+
+    @Override
+    public void editContact(String oldName, String newName, int newAge, String newPhoneNumber) {
+        Contact contact = this.contactList.get(oldName);
+        contact.setName(newName);
+        contact.setAge(newAge);
+        contact.setPhoneNumber(newPhoneNumber);
+    }
+
 
 }
